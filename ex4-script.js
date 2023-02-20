@@ -12,10 +12,16 @@ function start() {
 
 function jumpingSquare() {
   console.log("jumpingSquare");
+  document
+    .querySelector("#orange_container")
+    .removeEventListener("click", jumpingSquare);
   document.querySelector("#orange_container").classList.add("jump-once");
 }
 
 function jumpDone() {
   console.log("jumpDone");
   document.querySelector("#orange_container").classList.remove("jump-once");
+  document
+    .querySelector("#orange_container")
+    .addEventListener("click", jumpingSquare);
 }
